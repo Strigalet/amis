@@ -1,4 +1,6 @@
 from data import *
+from validators.lib_purch import *
+
 
 def importing_new(dataset,name,date,product,quantity,price):
     if name in dataset:
@@ -12,9 +14,37 @@ def importing_new(dataset,name,date,product,quantity,price):
         dataset[name] = {date: {product: {'quantity': quantity,
                                           'price': price}}}
 
-importing_new(dataset,"Gleb","10.01.2019","chocolate",3,45)
-importing_new(dataset,"Jane","12.11.2018","milk",2,30)
-importing_new(dataset,"Mike","16.11.2018","meat",17,150)
-importing_new(dataset,"John","24.10.2018","apple",2,6)
-for value in dataset.values():
-    print(value)
+def addPurchaseValidator():
+
+    name=get_name()
+    while not name:
+        print("Print correct data:" )
+        name = get_name()
+
+    date=get_date()
+    while not date:
+        print("Print correct data:" )
+        date = get_date()
+
+    product=get_product()
+    while not product:
+        print("Print correct data:" )
+        product = get_product()
+
+    quantity = get_quantity()
+    while not quantity:
+        print("Print correct data:")
+        quantity = get_quantity()
+
+    price = get_price()
+    while not date:
+        print("Print correct data:")
+        price = get_price()
+
+    importing_new(dataset, name, date, product, quantity, price)
+
+
+addPurchaseValidator()
+for key,value in dataset.items():
+    print(key,value)
+

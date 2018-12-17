@@ -1,0 +1,3 @@
+Products, milk, apple, bread
+Cars, Mers, Opel, Skoda
+Gadgets, smartphone, PC, pager

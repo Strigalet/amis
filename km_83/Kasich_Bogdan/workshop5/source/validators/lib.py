@@ -80,6 +80,7 @@ def get_station():
         return user_input
     else:
         return False
+
 """
 print(get_latitude())
 print(get_longtitude())
